@@ -97,6 +97,7 @@
   // Бургер-меню
   &__burger {
     display: none; // Скрыто по умолчанию
+    border: 1px solid transparent;
 
     @include m.respond-to(medium-screens) {
       display: block;
@@ -106,6 +107,7 @@
       z-index: 11;
       order: 3;
       cursor: pointer;
+      padding: $gap-s;
 
       span {
         position: absolute;
@@ -118,7 +120,7 @@
         max-width: 18px;
 
         &:nth-child(1) {
-          top: 0;
+          top: 5px;
         }
 
         &:nth-child(2) {
@@ -127,7 +129,7 @@
         }
 
         &:nth-child(3) {
-          bottom: 0;
+          bottom: 5px;
         }
       }
 
@@ -155,7 +157,6 @@
     }
 
     &.active {
-      padding: 1rem;
       border: 1px solid white;
       border-radius: 50%;
 
@@ -166,8 +167,11 @@
 
   }
 
-  @include m.respond-to(handhelds) {
+  @include m.respond-to(medium-screens) {
     background-color: $black-light;
+  }
+
+  @include m.respond-to(handhelds) {
 
     &__login,
     &__phone:not(.mobile) {

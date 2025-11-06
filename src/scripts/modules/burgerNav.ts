@@ -93,6 +93,8 @@ export class MobileNavigation {
     this.burger?.classList.toggle('active');
     this.levels?.classList.toggle('active');
 
+    document.body.classList.toggle('menu-open');
+
     if (!this.levels?.classList.contains('active')) {
       // При закрытии навигации возвращаемся на первый уровень
       this.goBack();

@@ -1,4 +1,5 @@
 @use '../base/vars' as *;
+@use '../base/mixins' as m;
 
 .marquee-container {
   width: 100%;
@@ -7,6 +8,10 @@
   padding: .5rem 0;
   position: relative;
   z-index: 99;
+
+  @include m.respond-to(handhelds) {
+    display: none;
+  }
 }
 
 .marquee-track {

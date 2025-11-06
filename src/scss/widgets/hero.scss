@@ -2,7 +2,11 @@
 @use '../base/mixins' as m;
 
 .hero {
-  height: calc(100lvh - $header-height);
+  height: calc(100lvh - $header-height - $marquee-height);
+
+  @include m.respond-to(handhelds) {
+    height: calc(100lvh - $header-height);
+  }
 
   &__swiper {
     width: 100%;
@@ -10,7 +14,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+
+    @include m.respond-to(medium-screens) {
+      position: static;
+    }
   }
 
   .text-block {
