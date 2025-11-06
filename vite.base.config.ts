@@ -2,7 +2,7 @@
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
-import htmlIncludes from './plugins/vite.html-includes.plugin';
+import handlebars from 'vite-plugin-handlebars';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -13,5 +13,9 @@ export default defineConfig({
       'src': resolve(__dirname, './src')
     }
   },
-  plugins: [htmlIncludes()]
+  plugins: [
+    handlebars({
+      partialDirectory: resolve(__dirname, 'src/shared/html'),
+    })
+  ],
 });

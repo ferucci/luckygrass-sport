@@ -1,14 +1,17 @@
 import fs from 'node:fs';
 import { resolve } from 'node:path';
+import type { RollupOptions } from 'rollup';
 import { defineConfig } from 'vite';
 
-const htmlFiles = fs.readdirSync('.').filter(file => file.endsWith('.html'));
+// Получаем все HTML файлы из корня проекта
+const htmlFiles: string[] = fs.readdirSync('.').filter((file: string) => file.endsWith('.html'));
 
-const input = htmlFiles.reduce((acc: Record<string, string>, file) => {
-  const name = file.replace('.html', '');
+// Явно указываем тип для input объекта
+const input: Record<string, string> = htmlFiles.reduce((acc: Record<string, string>, file: string) => {
+  const name: string = file.replace('.html', '');
   acc[name] = resolve(__dirname, file);
   return acc;
-}, {});
+}, {} as Record<string, string>);
 
 export default defineConfig({
   base: './',
@@ -18,14 +21,14 @@ export default defineConfig({
     rollupOptions: {
       input,
       output: {
-        assetFileNames: (assetInfo) => {
+        assetFileNames: (assetInfo: { name?: string }): string => {
           if (!assetInfo.name) return 'assets/[ext]/[name][extname]';
 
-          const fullPath = assetInfo.name;
-          const extType = assetInfo.name.split('.').pop()?.toLowerCase();
+          const fullPath: string = assetInfo.name;
+          const extType: string | undefined = assetInfo.name.split('.').pop()?.toLowerCase();
 
           if (extType && ['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp', 'ico', 'avif'].includes(extType)) {
-            const imagesIndex = fullPath.indexOf('images/');
+            const imagesIndex: number = fullPath.indexOf('images/');
             if (imagesIndex !== -1) {
               return fullPath.slice(imagesIndex);
             }
@@ -37,12 +40,12 @@ export default defineConfig({
         chunkFileNames: 'assets/js/[name].[hash].js',
         entryFileNames: 'assets/js/[name].[hash].js'
       }
-    }
+    } as RollupOptions
   },
   plugins: [
     {
       name: 'html-transform',
-      transformIndexHtml(html) {
+      transformIndexHtml(html: string): string {
         return html
           .replace(/ type="module"/g, '')
           .replace(/ crossorigin/g, '')
@@ -51,6 +54,6 @@ export default defineConfig({
     }
   ],
   css: {
-    devSourcemap: false // Отключаем sourcemaps в production
+    devSourcemap: false
   }
 });
