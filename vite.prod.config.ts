@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 
 const htmlFiles = fs.readdirSync('.').filter(file => file.endsWith('.html'));
 
-const input = htmlFiles.reduce((acc, file) => {
+const input = htmlFiles.reduce((acc: Record<string, string>, file) => {
   const name = file.replace('.html', '');
   acc[name] = resolve(__dirname, file);
   return acc;

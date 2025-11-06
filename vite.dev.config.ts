@@ -6,7 +6,7 @@ export default defineConfig({
   css: {
     devSourcemap: true
   },
-  // Дополнительные dev-специфичные настройки
+
   server: {
     port: 3333,
     open: true

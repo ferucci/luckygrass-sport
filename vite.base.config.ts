@@ -2,6 +2,7 @@
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
+import htmlIncludes from './plugins/vite.html-includes.plugin';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -11,5 +12,6 @@ export default defineConfig({
       '@': resolve(__dirname, './src'),
       'src': resolve(__dirname, './src')
     }
-  }
+  },
+  plugins: [htmlIncludes()]
 });
