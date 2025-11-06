@@ -1,8 +1,8 @@
-@use 'fonts';
-@use 'vars' as *;
-@use 'reset';
-@use 'global';
-@use 'mixins' as m;
+@use 'base/fonts';
+@use 'base/vars' as *;
+@use 'base/reset';
+@use 'base/global';
+@use 'base/mixins' as m;
 // @use 'animate';
 @use 'widgets/hero';
 
