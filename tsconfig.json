@@ -31,16 +31,13 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./types"
-    ]
   },
   "types": [
     "vite/client",
     "node"
   ],
   "include": [
-    "src"
+    "src",
+    "src/vite-plugin-handlebars.d.ts"
   ]
 }
