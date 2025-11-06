@@ -1,0 +1,97 @@
+@use 'vars' as *;
+@use 'fonts';
+
+@mixin fontGS($weight: 600, $lh: 100%) {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  line-height: $lh;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+@mixin fontOS($weight: 400, $lh: 100%) {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  line-height: $lh;
+  font-style: normal;
+}
+
+@mixin df($ai: center, $jc: center, $fd: row) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+  flex-direction: $fd;
+}
+
+@mixin titleSmall($fs: $fs-title, $weight: 500, $lh: 25px) {
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $weight;
+
+  @include respond-to(medium-screens) {
+    line-height: calc($lh - 4px);
+  }
+
+  @include respond-to(tablet) {
+    line-height: calc($lh - 7px);
+  }
+}
+
+@mixin textDescription($fs: $fs-text, $weight: 400) {
+  font-size: $fs;
+  line-height: 26px;
+  font-weight: $weight;
+
+  @include respond-to(medium-screens) {
+    line-height: 21px;
+  }
+
+  @include respond-to(handhelds) {
+    line-height: 14px;
+  }
+}
+
+@mixin respond-to($media) {
+
+  // карманные компьютеры
+  @if $media ==handhelds {
+    @media only screen and (max-width: $small) {
+      @content;
+    }
+  }
+
+  @if $media ==tablet {
+    @media only screen and (max-width: $tablets) {
+      @content;
+    }
+  }
+
+  @if $media ==medium-screens {
+    @media only screen and (max-width: $large) {
+      @content;
+    }
+  }
+
+  // @else if $media ==medium-screens {
+  //   @media only screen and (min-width: ($small + 1)) and (max-width: ($large - 1)) {
+  //     @content;
+  //   }
+  // }
+
+  // широкий экран
+  @else if $media ==wide-screens {
+    @media only screen and (min-width: $large) {
+      @content;
+    }
+  }
+
+  @else if $media ==cont-w {
+    @media only screen and (min-width: $container) {
+      @content;
+    }
+  }
+
+}

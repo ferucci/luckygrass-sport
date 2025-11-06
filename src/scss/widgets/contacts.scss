@@ -1,0 +1,36 @@
+@use '../vars' as *;
+@use '../mixins' as m;
+
+.contacts {
+  background: $black;
+  color: $white;
+
+  &__inner {
+    text-align: center;
+    padding: 5rem .25rem;
+
+    @include m.respond-to(handhelds) {
+      padding: 3rem .25rem;
+    }
+  }
+
+  .title,
+  &__block {
+    margin-bottom: 20px;
+  }
+
+  &__info {
+    max-width: 357px;
+    margin: 0 auto;
+    font-size: 17px;
+  }
+
+  &__block {
+    @include m.df($fd: column);
+  }
+
+  &__address {
+    @include m.fontOS();
+    margin-bottom: 5px;
+  }
+}

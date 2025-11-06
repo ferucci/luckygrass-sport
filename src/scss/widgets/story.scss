@@ -1,0 +1,131 @@
+@use '../vars' as *;
+@use '../mixins' as m;
+
+.story {
+  &__top {
+    @include m.df(center, space-between);
+    gap: $gap-s;
+    margin-bottom: $gap-s;
+  }
+
+  &__image-wrapper,
+  &__title,
+  &__text,
+  &__link {
+    // display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  &__image-wrapper {
+    height: 15rem;
+    overflow: hidden;
+  }
+
+  &__img {
+    object-fit: cover;
+    min-height: 100%;
+    width: 100%;
+  }
+
+  &__text,
+  &__title {
+    max-width: 440px;
+  }
+
+  &__text {
+    max-width: 440px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* Количество строк */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__link {
+    font-size: 15px;
+    color: $link-color;
+    text-decoration: underline;
+  }
+
+  &__link.cs {
+    text-decoration: none;
+  }
+
+}
+
+.blog {
+  .story__link {
+    font-size: $fs-small;
+  }
+}
+
+
+.story__navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  @include m.respond-to(handhelds) {
+    gap: 5px;
+  }
+}
+
+.story__prev,
+.story__next {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+
+  @include m.respond-to(handhelds) {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+
+.story__prev.swiper-button-disabled,
+.story__next.swiper-button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.story__prev::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  background-image: url(../images/main/reviews/icons/prev-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include m.respond-to(handhelds) {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.story__next::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  background-image: url(../images/main/reviews/icons/next-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include m.respond-to(handhelds) {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

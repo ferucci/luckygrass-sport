@@ -1,0 +1,306 @@
+@use '../vars' as *;
+@use '../mixins' as m;
+
+.header {
+  position: relative;
+
+  &__inner {
+    @include m.df($jc: space-between);
+
+    gap: $gap-s;
+    color: $white;
+    background: transparent;
+    padding: 1rem;
+  }
+
+  &__logo {
+    z-index: 2;
+
+    @include m.respond-to(handhelds) {
+      order: 1;
+    }
+  }
+
+  .nav {
+    flex-shrink: 0;
+    font-size: $fs-medium;
+    font-weight: 600;
+    z-index: 2;
+
+    @include m.respond-to(medium-screens) {
+      font-size: 30px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100lvh;
+      background: $black;
+      z-index: 10;
+      transform: translateX(-500vw);
+      transition: transform 0.3s ease;
+      // padding-top: 5rem;
+      @include m.df($jc: initial);
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
+
+    &__link {
+      text-transform: uppercase;
+    }
+
+  }
+
+  &__contacts {
+    flex-shrink: 1;
+    @include m.df();
+    gap: calc($gap-s / 2) $gap-s;
+    flex-wrap: wrap;
+    width: fit-content;
+    z-index: 2;
+
+    @include m.respond-to(handhelds) {
+      flex-flow: column;
+      order: 2;
+    }
+  }
+
+  &__login {
+    font-size: 10px;
+    font-weight: 400;
+    text-decoration: underline;
+  }
+
+  &__phone {
+    font-size: $fs-medium;
+    font-weight: 600;
+  }
+
+  &__login.mobile {
+    display: none;
+
+    @include m.respond-to(handhelds) {
+      display: block;
+    }
+  }
+
+  @include m.respond-to(handhelds) {
+
+    &__login,
+    &__phone:not(.mobile) {
+      display: none;
+    }
+  }
+
+  .phone-svg {
+    display: none;
+
+    @include m.respond-to(handhelds) {
+      display: block;
+      order: 0;
+    }
+  }
+
+  // Бургер-меню
+  &__burger {
+    display: none; // Скрыто по умолчанию
+
+    @include m.respond-to(medium-screens) {
+      display: block;
+      width: 22px;
+      height: 20px;
+      position: relative;
+      z-index: 11;
+      order: 3;
+      cursor: pointer;
+
+      span {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: $white;
+        left: 0;
+        transition: all 0.3s ease;
+        max-height: 15px;
+        max-width: 18px;
+
+        &:nth-child(1) {
+          top: 0;
+        }
+
+        &:nth-child(2) {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &:nth-child(3) {
+          bottom: 0;
+        }
+      }
+
+      &.active {
+        span {
+          &:nth-child(1) {
+            transform: rotate(45deg) translate(20%, -200%);
+            top: 50%;
+          }
+
+          &:nth-child(2) {
+            opacity: 0;
+          }
+
+          &:nth-child(3) {
+            transform: rotate(-45deg) translate(20%, 200%);
+            bottom: 50%;
+          }
+        }
+      }
+    }
+
+    @include m.respond-to(handhelds) {
+      order: 0;
+    }
+
+    &.active {
+      padding: 1rem;
+      border: 1px solid white;
+      border-radius: 50%;
+
+      @include m.respond-to(handhelds) {
+        order: 3;
+      }
+    }
+
+  }
+
+}
+
+.mobile-nav {
+  &-levels {
+    display: none;
+
+    @include m.respond-to(medium-screens) {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100lvh;
+      background: $black;
+      z-index: 10;
+      transform: translateX(-200vh);
+      transition: transform 0.3s ease;
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
+
+  }
+}
+
+.nav-level {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $black;
+  display: none;
+  flex-direction: column;
+  padding: 1rem;
+  z-index: 10;
+
+  &.active {
+    display: flex;
+  }
+
+  &__header {
+    @include m.fontGS();
+    padding: 3rem 1rem 1rem 0;
+    border-bottom: 1px solid rgba($white, 0.1);
+    @include m.df($jc: space-between);
+
+    .nav-level-1 & {
+      @include m.df($jc: flex-start);
+    }
+  }
+
+  &__back {
+    @include m.df();
+    gap: 1rem;
+    color: $white;
+    font-size: $fs-medium;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__login {
+    font-size: 17px;
+    font-weight: 400;
+    text-decoration: underline;
+    color: $white;
+    padding-top: 2rem;
+  }
+
+  &__menu {
+    overflow-y: auto;
+  }
+
+  &__list {
+    padding: 2rem 0;
+
+    &[data-menu] {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  &__item {
+    list-style: none;
+    margin-bottom: $gap-s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    @include m.df($jc: space-between);
+    @include m.fontGS();
+    color: $white;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        color: rgba($white, 0.8);
+      }
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+  }
+}
+
+.header__burger.active~.mobile-nav-levels {
+  @include m.respond-to(medium-screens) {
+    transform: translateX(0);
+  }
+}

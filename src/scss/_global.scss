@@ -1,0 +1,173 @@
+@use 'mixins' as m;
+@use 'vars' as *;
+
+// Стили для скроллбара (WebKit браузеры)
+*::-webkit-scrollbar {
+  height: 2px; // Высота всей полосы прокрутки
+  background-color: transparent;
+  border-radius: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: $white; // Цвет линии трека
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $black; // Цвет ползунка
+  height: 1px; // Высота ползунка
+  border-radius: 1rem;
+}
+
+* {
+  scrollbar-width: thin; // "auto" | "thin" | "none"
+  scrollbar-color: $black $white; // thumb track
+}
+
+body {
+  @include m.fontOS;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: $black;
+
+  @include m.df(initial, initial, $fd: column);
+
+  background-color: $white;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+body:has(.overlay.active) {
+  overflow: hidden;
+}
+
+main {
+  min-height: calc(100lvh + $header-height);
+  flex: 1;
+}
+
+.container {
+  max-width: calc($container - ($padding-x * 2));
+  padding: 0 $padding-x;
+  margin: 0 auto;
+}
+
+.section:not(.hero) {
+  margin-bottom: clamp(2.5rem, 3vw, 5rem);
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.title {
+  @include m.fontGS(700);
+  text-transform: uppercase;
+}
+
+h1.title {
+  font-size: 4rem;
+}
+
+h2.title {
+  font-size: 3rem;
+}
+
+h3.title {
+  font-size: 2.5rem;
+}
+
+h4.title {
+  @include m.fontGS(700);
+  font-size: 2.3rem;
+}
+
+h5.title {
+  @include m.fontOS(600);
+  font-size: 15px;
+}
+
+p.description {
+  @include m.fontOS(600);
+  font-size: 1rem;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+  background: $button-bg;
+  height: $btn-height;
+  padding: 0 calc($gap-s * 2);
+  color: $white;
+  border-radius: $br;
+  transition: background $transition-duration ease-in;
+
+  border: none;
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:hover {
+      background: rgba($button-bg, .8);
+    }
+  }
+
+}
+
+@include m.respond-to(handhelds) {
+  h1.title {
+    font-size: 2.2rem;
+  }
+
+  h2.title {
+    font-size: 1.8rem;
+  }
+
+  h3.title {
+    font-size: 1.5rem;
+  }
+
+  h4.title {
+    font-size: 1.3rem;
+  }
+
+  p.description {
+    font-size: 15px;
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9; // Ниже меню (10) и бургера (11)
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  @include m.respond-to(medium-screens) {
+    &.active {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.not-found-page {
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 55vh;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__title {
+    color: $black;
+    @include m.titleSmall($fs: clamp(1rem, 3vw, 2rem));
+  }
+}

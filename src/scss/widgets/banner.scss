@@ -1,0 +1,45 @@
+@use '../vars' as *;
+@use '../mixins' as m;
+
+
+.banner {
+
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+
+    border-radius: 3px;
+    min-height: 450px;
+
+    @include m.respond-to(handhelds) {
+      min-height: 350px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__text {
+    position: absolute;
+    bottom: $gap-s;
+    text-align: center;
+    padding: $gap-s;
+
+    .title,
+    .description {
+      margin-bottom: $gap-s;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      color: $white;
+    }
+  }
+
+}

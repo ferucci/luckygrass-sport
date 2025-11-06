@@ -1,0 +1,62 @@
+@use '../vars' as *;
+@use '../mixins' as m;
+
+.services {
+
+  &__inner {
+    background-color: $grey;
+    padding: 4rem 3rem;
+    margin-bottom: clamp(2.5rem, 3vw, 1.5rem);
+
+    @include m.respond-to(tablet) {
+      background-color: transparent;
+      padding: 1rem 0;
+    }
+
+  }
+
+  &__item {
+    @include m.df(center, space-between);
+    padding: calc($gap-s * 2) 0;
+
+    @include m.respond-to(medium-screens) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item:first-child {
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
+  }
+
+  &__item+.services__item {
+    border-bottom: 1px solid $black;
+  }
+
+
+  &__link {
+    font-size: $fs-small;
+    color: $link-color;
+    text-decoration: underline;
+  }
+
+  &__title-wrapper {
+    flex: 1 0 calc($container / 2.4);
+
+    @include m.respond-to(medium-screens) {
+      flex: 1 1 auto;
+      @include m.df(center, space-between);
+      gap: $gap-s;
+
+      .title {
+        margin-bottom: .5rem;
+      }
+    }
+
+    @include m.respond-to(tablet) {
+      .services__link {
+        display: none;
+      }
+    }
+  }
+}

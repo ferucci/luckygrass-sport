@@ -1,0 +1,72 @@
+@use '../vars' as *;
+@use '../mixins' as m;
+@use '../media' as media;
+
+.adv {
+
+  .title {
+    margin-bottom: calc($gap-s * 2);
+    text-align: center;
+  }
+
+  &__inner {
+    @include m.df($fd: column);
+    gap: calc($gap-s * 2);
+    background-color: $grey;
+    padding: calc($gap-s * 2) calc($gap-s * 3);
+
+    @include m.respond-to(handhelds) {
+      padding: $gap-s;
+    }
+  }
+
+  &__list {
+    @include m.df();
+    gap: 2vw;
+
+    @include m.respond-to(handhelds) {
+      flex-wrap: wrap
+    }
+  }
+
+  &__item {
+    @include m.fontOS(700);
+    font-size: var(--adv-fs);
+    text-transform: uppercase;
+
+    @include m.df($fd: column);
+
+    background-image: url(../images/main/adv-bg-circle.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    gap: $gap-s;
+    min-width: var(--adv-size);
+    min-height: var(--adv-size);
+
+    span {
+      text-align: center;
+      max-width: calc(var(--adv-size) / 1.6);
+    }
+
+    .adv__num {
+      font-size: calc(var(--adv-fs) * 2);
+    }
+  }
+
+  &__text {
+    text-align: center;
+    text-wrap: balance;
+
+    @include m.respond-to(handhelds) {
+      text-align: start;
+    }
+  }
+
+  &__partners {
+    width: 100%;
+    @include m.df($jc: space-around);
+    gap: $gap-s;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,20 @@
+@use 'mixins' as m;
+
+:root {
+  --adv-fs: 22px;
+  --adv-size: 20rem;
+}
+
+@include m.respond-to(medium-screens) {
+  :root {
+    --adv-fs: 15px;
+    --adv-size: 15rem;
+  }
+}
+
+@include m.respond-to(tablet) {
+  :root {
+    --adv-fs: 12px;
+    --adv-size: 10rem;
+  }
+}

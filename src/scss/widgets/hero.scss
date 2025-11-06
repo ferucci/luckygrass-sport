@@ -1,0 +1,111 @@
+@use '../vars' as *;
+@use '../mixins' as m;
+
+.hero {
+  height: 100lvh;
+
+  &__swiper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .text-block {
+    text-align: center
+  }
+
+  .description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+
+    max-width: 450px;
+    margin: 0 auto;
+
+    @include m.respond-to(handhelds) {
+      font-size: 15px;
+    }
+  }
+
+  .button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 150%);
+  }
+
+  .swiper-slide-active .title,
+  .swiper-slide-active .description {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .swiper-pagination {
+    position: relative;
+    z-index: 3;
+    bottom: calc($gap-s * 3) !important;
+
+    @include m.respond-to(handhelds) {
+      bottom: calc($gap-s * 2) !important;
+    }
+  }
+
+
+  .swiper-pagination-bullet {
+    width: $dot-size;
+    height: $dot-size;
+    background-color: $dot-inactive-color;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $dot-active-color;
+  }
+}
+
+.slide {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    color: $white;
+    text-align: center;
+    max-width: 100%;
+    padding: 0 1rem 5rem;
+
+    @include m.respond-to(handhelds) {
+      padding: 0 1rem 3rem;
+    }
+  }
+
+  .title {
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(calc($gap-s * 2));
+    transition: all $transition-duration ease;
+  }
+
+  .description {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(calc($gap-s * 2));
+    transition: all $transition-duration ease 0.2s;
+  }
+
+}
