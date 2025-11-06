@@ -1,4 +1,4 @@
-import { initializeBurger, initializeMarquee, initializeSliders } from "./ts";
+import { initializeBurger, initializeMarquee, initializeSliders } from "./scripts";
 
 document.addEventListener("DOMContentLoaded", () => {
 
