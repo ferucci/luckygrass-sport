@@ -1,4 +1,4 @@
-class SmoothMarquee {
+export class SmoothMarquee {
   private container: HTMLElement;
   private track: HTMLElement;
   private speed: number;
@@ -96,15 +96,6 @@ class SmoothMarquee {
     if (this.animationId) {
       cancelAnimationFrame(this.animationId);
     }
-  }
-}
-
-
-export function initializeMarquee(): void {
-  const marqueeContainer = document.querySelector('.marquee-container') as HTMLElement;
-
-  if (marqueeContainer) {
-    new SmoothMarquee(marqueeContainer, 1);
   }
 }
 
