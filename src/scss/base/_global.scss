@@ -96,7 +96,7 @@ p.description {
 .button {
   display: block;
   margin: 0 auto;
-  background: $button-bg;
+  background: $black-light;
   height: $btn-height;
   padding: 0 calc($gap-s * 2);
   color: $white;
@@ -108,7 +108,7 @@ p.description {
 
   @media (hover: hover) {
     &:hover {
-      background: rgba($button-bg, .8);
+      background: rgba($black-light, .8);
     }
   }
 

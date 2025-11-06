@@ -85,14 +85,6 @@
     }
   }
 
-  @include m.respond-to(handhelds) {
-
-    &__login,
-    &__phone:not(.mobile) {
-      display: none;
-    }
-  }
-
   .phone-svg {
     display: none;
 
@@ -172,6 +164,15 @@
       }
     }
 
+  }
+
+  @include m.respond-to(handhelds) {
+    background-color: $black-light;
+
+    &__login,
+    &__phone:not(.mobile) {
+      display: none;
+    }
   }
 
 }
