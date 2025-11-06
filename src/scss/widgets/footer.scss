@@ -5,7 +5,7 @@
   font-size: $fs-medium;
 
   &__top {
-    padding: 3.5rem 2rem 2rem;
+    padding: 3.5rem calc($gap-s * 2) calc($gap-s * 2);
     border-top: 1px solid $black;
     border-bottom: 1px solid $black;
     position: relative;
@@ -34,6 +34,17 @@
       background: #fff;
       background-repeat: no-repeat;
     }
+
+    @include m.respond-to(handhelds) {
+      border-color: $grey-light;
+      padding: calc($gap-s * 3) 0;
+
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+
   }
 
   &__list {
@@ -79,15 +90,15 @@
   }
 
   &__item,
-  &__menu {
+  &__menu,
+  &__o-hours,
+  &__menu-block {
     @include m.df(start, space-between, column);
-    gap: $gap-s;
+    gap: calc($gap-s / 2);
   }
 
   &__menu-block {
     margin-top: auto;
-    @include m.df(start, $fd: column);
-    gap: $gap-s;
   }
 
   &__menu {
@@ -98,13 +109,14 @@
     display: none;
   }
 
-  &__o-hours {
-    @include m.df(start, $fd: column);
-    gap: $gap-s;
-  }
+  // &__o-hours,
+  // &__menu-block {
+  //   @include m.df(start, $fd: column);
+  //   gap: calc($gap-s / 2);
+  // }
 
   &__middle {
-    padding: 3.5rem 2rem 2rem;
+    padding: 3.5rem calc($gap-s * 2) calc($gap-s * 2);
     text-align: center;
     border-bottom: 1px solid $black;
 
@@ -113,6 +125,14 @@
       letter-spacing: 1%;
       margin-bottom: calc($gap-s / 2);
     }
+
+    @include m.respond-to(handhelds) {
+      display: none;
+    }
+  }
+
+  &__address {
+    @include m.fontOS()
   }
 
   &__projects {
@@ -128,6 +148,35 @@
 
   @include m.respond-to(handhelds) {
 
+    background-color: $black-light;
+    color: $grey;
+
+    .footer__mobile-title {
+      margin-bottom: .5rem;
+    }
+
+    &__logo {
+      display: none;
+    }
+
+    .social {
+      gap: calc($gap-s / 2);
+    }
+
+    .social a svg path {
+      stroke: $grey;
+      stroke-width: 1px;
+    }
+
+    .social a svg rect {
+      fill: $grey;
+    }
+
+    .footer__privacy {
+      margin-bottom: 1rem;
+      order: -1;
+    }
+
     .footer__item:first-child {
       order: 1;
     }
@@ -141,7 +190,7 @@
     }
 
     .no-hidden {
-      display: block;
+      display: flex;
     }
 
     .footer__nav {

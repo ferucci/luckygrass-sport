@@ -1,7 +1,9 @@
 $white: rgb(255, 255, 255);
 $black: rgb(0, 0, 0);
+$black-light: #181818;
 $black03: rgba($black, .3);
 $grey: #F7F7F7;
+$grey-light: #7F7F7FCC;
 $link-color: #0C73FE;
 
 $padding-x: clamp(1rem, 2vw, 2.3rem);
@@ -18,7 +20,6 @@ $header-height: 52px;
 $marquee-height: 37px;
 
 // button
-$black-light: #181818;
 $btn-height: 2.5rem;
 $br: 25px;
 

@@ -41,7 +41,7 @@
   }
 
   &__title-wrapper {
-    flex: 1 0 calc($container / 2.4);
+    flex: 1 0 calc($container / 3.3);
 
     @include m.respond-to(medium-screens) {
       flex: 1 1 auto;

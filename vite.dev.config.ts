@@ -9,6 +9,9 @@ export default defineConfig({
 
   server: {
     port: 3333,
-    open: true
+    open: true,
+    // headers: {
+    //   'Content-Type': 'font/woff2'
+    // }
   }
 });

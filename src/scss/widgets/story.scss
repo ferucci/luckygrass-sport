@@ -30,9 +30,11 @@
   &__text,
   &__title {
     max-width: 440px;
+    text-transform: initial;
   }
 
   &__text {
+    font-size: 15px;
     max-width: 440px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -56,6 +58,7 @@
 
 .blog {
   .story__link {
+    display: inline-block;
     font-size: $fs-small;
   }
 }

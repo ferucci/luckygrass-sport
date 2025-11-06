@@ -2,7 +2,6 @@
 @use '../base/mixins' as m;
 
 .cta {
-  @include m.df(center, center, column);
   $padding-x: 3.5rem;
 
   &__button {
@@ -19,7 +18,8 @@
     align-items: center;
     justify-content: space-between;
     background-color: $grey;
-    padding: 3rem $padding-x;
+    padding: calc($gap-s * 3) $padding-x;
+    gap: calc($gap-s * 2);
 
     @include m.respond-to(tablet) {
       padding: 0;
@@ -58,14 +58,14 @@
 
   &__rotated-text {
     @include m.fontGS(700);
-    font-size: calc($gap-s * 2);
+    font-size: calc($gap-s * 2.8);
     display: inline-block;
     white-space: nowrap;
     line-height: 1;
   }
 
   &__link {
-    @include m.fontGS(300);
+    @include m.fontOS(600);
     letter-spacing: 1%;
     font-size: 15px;
     padding-left: 3rem;
@@ -88,5 +88,9 @@
     @include m.respond-to(tablet) {
       display: none;
     }
+  }
+
+  @include m.respond-to(tablet) {
+    @include m.df(center, center, column);
   }
 }

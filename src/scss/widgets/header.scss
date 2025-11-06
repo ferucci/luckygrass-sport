@@ -250,10 +250,10 @@
 
   &__login {
     font-size: 17px;
-    font-weight: 400;
+    font-weight: 600;
     text-decoration: underline;
     color: $white;
-    padding-top: 2rem;
+    padding-top: calc($gap-s * 2);
   }
 
   &__menu {
@@ -261,7 +261,7 @@
   }
 
   &__list {
-    padding: 2rem 0;
+    padding: calc($gap-s * 2) 0;
 
     &[data-menu] {
       display: none;

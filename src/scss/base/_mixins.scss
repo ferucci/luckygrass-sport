@@ -2,17 +2,15 @@
 @use 'fonts';
 
 @mixin fontGS($weight: 600, $lh: 100%) {
-  font-family: "Oswald", sans-serif;
+  font-family: "GiorgioSans", sans-serif;
   font-optical-sizing: auto;
   font-weight: $weight;
   line-height: $lh;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
 }
 
 @mixin fontOS($weight: 400, $lh: 100%) {
-  font-family: "Open Sans", sans-serif;
+  font-family: "OpenSans", sans-serif;
   font-optical-sizing: auto;
   font-weight: $weight;
   line-height: $lh;
