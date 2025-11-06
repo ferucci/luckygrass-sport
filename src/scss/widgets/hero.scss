@@ -2,7 +2,7 @@
 @use '../mixins' as m;
 
 .hero {
-  height: 100lvh;
+  height: calc(100lvh - $header-height);
 
   &__swiper {
     width: 100%;
