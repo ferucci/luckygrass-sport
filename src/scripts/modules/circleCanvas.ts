@@ -13,10 +13,29 @@ export class CirclesCanvas {
   }
 
   private init() {
+    // Проверю если нет ни одного элемента, тогда выхожу
+    const els = document.querySelectorAll('.circle');
+
+    if (!els.length) return;
+
     this.observer.observe('.circle');
 
     // Ресайз при изменении размеров окна с дебаунсом
-    new ListenerResize(() => this.observer.observe('.circle'));
+    new ListenerResize(() => this.handleResize());
+  }
+
+  // Перерисовка всех анимированных canvas
+  private handleResize() {
+
+    this.animatedCanvases.forEach(canvas => {
+      // Очищаем и перерисовываем
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+      this.drawCircle(canvas);
+    });
+
   }
 
   private handleCanvasAnimation(entry: IntersectionObserverEntry, index: number) {
@@ -43,6 +62,8 @@ export class CirclesCanvas {
   private drawCircle(canvas: HTMLCanvasElement) {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.lineWidth = 15;
     ctx.strokeStyle = '#1e1e1e52';

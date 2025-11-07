@@ -11,6 +11,10 @@ export class SlideInAnimation {
   }
 
   init(containerSelector: string) {
+    const els = document.querySelectorAll('.cta__rotated-text');
+
+    if (!els.length) return;
+
     this.observer.observe(containerSelector);
   }
 

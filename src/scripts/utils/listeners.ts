@@ -13,6 +13,7 @@ export class ListenerResize {
   }
 
   private resize() {
+    console.log(this.funcProp)
     return window.addEventListener('resize', debounce(this.funcProp.bind(this), 250));
   }
 }
