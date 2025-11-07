@@ -2,10 +2,11 @@
 @use '../base/mixins' as m;
 
 .hero {
-  height: calc(100lvh - $header-height - $marquee-height);
+  height: calc(100svh - $header-height - $marquee-height);
 
   @include m.respond-to(handhelds) {
-    height: calc(100lvh - $header-height);
+    $header-height: 66px;
+    height: calc(100svh - $header-height);
   }
 
   &__swiper {
@@ -52,10 +53,10 @@
   .swiper-pagination {
     position: relative;
     z-index: 3;
-    bottom: calc($gap-s * 3) !important;
+    bottom: calc($gap-s * 4) !important;
 
     @include m.respond-to(handhelds) {
-      bottom: calc($gap-s * 2) !important;
+      bottom: calc($gap-s * 3) !important;
     }
   }
 
@@ -94,10 +95,10 @@
     color: $white;
     text-align: center;
     max-width: 100%;
-    padding: 0 1rem 5rem;
+    padding: 0 1rem 6rem;
 
     @include m.respond-to(handhelds) {
-      padding: 0 1rem 3rem;
+      padding: 0 1rem 4rem;
     }
   }
 

@@ -41,7 +41,6 @@ body:has(.overlay.active) {
 }
 
 main {
-  min-height: calc(100lvh + $header-height);
   flex: 1;
 }
 
