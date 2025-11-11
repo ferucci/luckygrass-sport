@@ -9,8 +9,8 @@
   font-style: normal;
 }
 
-@mixin fontOS($weight: 400, $lh: 100%) {
-  font-family: "OpenSans", sans-serif;
+@mixin fontOS($weight: 400, $lh: 135%) {
+  font-family: 'Open-Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-optical-sizing: auto;
   font-weight: $weight;
   line-height: $lh;

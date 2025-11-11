@@ -5,20 +5,33 @@
   &__top {
     @include m.df(center, space-between);
     gap: $gap-s;
-    margin-bottom: $gap-s;
+    margin-bottom: 20px;
+
+    @include m.respond-to(tablet) {
+      margin-bottom: 15px;
+    }
   }
 
-  &__image-wrapper,
-  &__title,
-  &__text,
-  &__link {
+  &__image-wrapper {
     // display: inline-block;
+    margin-bottom: 20px;
+
+    @include m.respond-to(handhelds) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__title {
     margin-bottom: 10px;
   }
 
   &__image-wrapper {
-    height: 15rem;
+    height: 290px;
     overflow: hidden;
+
+    @include m.respond-to(handhelds) {
+      height: 170px;
+    }
   }
 
   &__img {
@@ -34,6 +47,7 @@
   }
 
   &__text {
+    @include m.fontOS(400);
     font-size: 15px;
     max-width: 440px;
     display: -webkit-box;
@@ -42,15 +56,19 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    margin-bottom: 10px
   }
 
   &__link {
-    font-size: 15px;
+    @include m.fontOS(400);
+    font-size: 12px;
     color: $link-color;
     text-decoration: underline;
   }
 
   &__link.cs {
+    margin-bottom: 10px;
     text-decoration: none;
   }
 
@@ -68,7 +86,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
+  padding-right: 2px;
 
   @include m.respond-to(handhelds) {
     gap: 5px;
@@ -77,8 +96,8 @@
 
 .story__prev,
 .story__next {
-  width: 2rem;
-  height: 2rem;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,8 +106,8 @@
   position: relative;
 
   @include m.respond-to(handhelds) {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 20px;
+    height: 20px;
   }
 }
 

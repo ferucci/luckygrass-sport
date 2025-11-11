@@ -5,22 +5,30 @@
 
   &__inner {
     background-color: $grey;
-    padding: 4rem 3rem;
-    margin-bottom: clamp(2.5rem, 3vw, 1.5rem);
+    padding: 60px;
+    margin-bottom: 40px;
 
     @include m.respond-to(tablet) {
       background-color: transparent;
-      padding: 1rem 0;
+      padding: 1rem 0 0;
     }
 
   }
 
+  &__item:has(.services__link) {
+    padding-bottom: 15px
+  }
+
   &__item {
-    @include m.df(center, space-between);
-    padding: calc($gap-s * 2) 0;
+    @include m.df(start, space-between);
+    padding: 32px 0;
 
     @include m.respond-to(medium-screens) {
       flex-wrap: wrap;
+    }
+
+    @include m.respond-to(handhelds) {
+      padding: $gap-s 0;
     }
   }
 
@@ -33,15 +41,24 @@
     border-bottom: 1px solid $black;
   }
 
+  .description {
+    font-size: 15px;
+
+    @include m.respond-to(handhelds) {
+      font-weight: 400;
+    }
+  }
+
 
   &__link {
+    @include m.fontOS(400);
     font-size: $fs-small;
     color: $link-color;
     text-decoration: underline;
   }
 
   &__title-wrapper {
-    flex: 1 0 calc($container / 3.3);
+    flex: 1 0 518px;
 
     @include m.respond-to(medium-screens) {
       flex: 1 1 auto;

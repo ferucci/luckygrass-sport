@@ -102,14 +102,18 @@
 
 .call-to-action {
   background-color: $grey;
-  padding: 5rem 3rem;
+  padding: 78px 220px 80px;
   text-align: center;
 
   @include m.respond-to(handhelds) {
-    padding: 3rem .25rem;
+    padding: 45px .25rem;
   }
 
   .title {
-    margin-bottom: clamp(1rem, 3vw, 2rem);
+    margin-bottom: 30px;
+
+    @include m.respond-to(handhelds) {
+      margin-bottom: 38px;
+    }
   }
 }

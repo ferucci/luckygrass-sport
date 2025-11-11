@@ -2,10 +2,9 @@
 @use '../base/mixins' as m;
 
 .cta {
-  $padding-x: 3.5rem;
 
   &__button {
-    margin-bottom: calc($gap-s * 2);
+    margin-bottom: 80px;
 
     @include m.respond-to(tablet) {
       order: 2;
@@ -14,33 +13,30 @@
   }
 
   &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include m.df(start, space-between);
     background-color: $grey;
-    padding: calc($gap-s * 3) $padding-x;
-    gap: calc($gap-s * 2);
+    padding: 50px 60px;
+    gap: 20px;
 
     @include m.respond-to(tablet) {
       padding: 0;
       background-color: transparent;
-    }
-  }
-
-  &__block {
-    max-width: calc($container - ($container / 3.5) - (($padding-x * 2)));
-
-    @include m.respond-to(handhelds) {
-      margin-bottom: 1rem;
+      margin-bottom: 35px;
     }
   }
 
   .title {
-    margin-bottom: .6rem;
+    margin-bottom: 6px;
   }
 
   .description {
-    margin-bottom: 1.5rem;
+    margin-bottom: 35px;
+    max-width: 90%;
+
+    @include m.respond-to(tablet) {
+      margin-bottom: 0;
+      max-width: 100%;
+    }
   }
 
   &__block:last-child {
@@ -49,7 +45,7 @@
     flex-direction: column;
     gap: 1rem;
     justify-content: center;
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) translateY(-4%);
 
     @include m.respond-to(tablet) {
       display: none
@@ -58,18 +54,17 @@
 
   &__rotated-text {
     @include m.fontGS(700);
-    font-size: calc($gap-s * 2.8);
+    font-size: 44px;
+    letter-spacing: 1%;
     display: inline-block;
     white-space: nowrap;
-    line-height: 1;
     transform: translateY(1000px)
   }
 
   &__link {
     @include m.fontOS(600);
-    letter-spacing: 1%;
     font-size: 15px;
-    padding-left: 3rem;
+    padding-left: 44px;
     text-decoration: underline;
     position: relative;
 

@@ -6,18 +6,18 @@ $grey: #F7F7F7;
 $grey-light: #7F7F7FCC;
 $link-color: #0C73FE;
 
-$padding-x: clamp(1rem, 2vw, 2.3rem);
+$padding-x: 20px;
 $gap-s: 1rem;
 
 // slider
 $transition-duration: 0.3s;
-$dot-size: 12px;
+$dot-size: 8px;
 
 $dot-active-color: $white;
 $dot-inactive-color: rgba(255, 255, 255, 0.3);
 
-$header-height: 52px;
-$marquee-height: 37px;
+$header-height: 44px;
+$marquee-height: 31px;
 
 // button
 $btn-height: 2.5rem;
@@ -25,11 +25,11 @@ $br: 25px;
 
 // font-size
 $fs-small: 12px;
-$fs-medium: 14px;
+$fs-s: 14px;
 
 // adaptive
 $small: 576px;
 $tablets: 768px;
 $large: 1200px;
 
-$container: 1400px;
+$container: 1440px;

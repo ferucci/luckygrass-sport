@@ -2,10 +2,23 @@
 @use '../base/mixins' as m;
 
 .footer {
-  font-size: $fs-medium;
+  font-size: $fs-s;
+  @include m.fontOS();
+
+  &__item,
+  &__menu,
+  &__o-hours,
+  &__menu-block {
+    @include m.df(start, space-between, column);
+    gap: 9px;
+  }
+
+  .mobile-nav__social {
+    display: none;
+  }
 
   &__top {
-    padding: 3.5rem calc($gap-s * 2) calc($gap-s * 2);
+    padding: 60px 0 34px;
     border-top: 1px solid $black;
     border-bottom: 1px solid $black;
     position: relative;
@@ -39,12 +52,32 @@
       border-color: $grey-light;
       padding: calc($gap-s * 3) 0;
 
+      .footer__menu-link,
+      .footer__privacy {
+        font-size: 15px;
+        @include m.fontOS(400, 20px);
+        color: $grey-light;
+        text-decoration: underline;
+        letter-spacing: 1%
+      }
+
+      .footer__mobile-title {
+        @include m.fontOS(600, 20px);
+        font-size: 15px;
+        color: $grey-light;
+        text-decoration: none !important;
+      }
+
       &::after,
       &::before {
         display: none;
       }
     }
 
+  }
+
+  .social {
+    gap: 10px;
   }
 
   &__list {
@@ -62,9 +95,22 @@
 
   .address {
     justify-content: start;
+    align-items: end;
+
+    @include m.respond-to(medium-screens) {
+      align-items: start;
+    }
 
     @include m.respond-to(handhelds) {
       display: none;
+    }
+  }
+
+  &__o-hours {
+    align-items: end;
+
+    @include m.respond-to(medium-screens) {
+      align-items: start;
     }
   }
 
@@ -86,19 +132,20 @@
 
   &__top-block {
     @include m.df(start, $fd: column);
-    gap: $gap-s
+    gap: 30px
   }
 
-  &__item,
-  &__menu,
-  &__o-hours,
-  &__menu-block {
-    @include m.df(start, space-between, column);
-    gap: calc($gap-s / 2);
-  }
 
   &__menu-block {
     margin-top: auto;
+  }
+
+  &__menu:first-child {
+    padding-left: 3.8vw;
+
+    @include m.respond-to(tablet) {
+      padding-left: 0;
+    }
   }
 
   &__menu {
@@ -116,7 +163,7 @@
   // }
 
   &__middle {
-    padding: 3.5rem calc($gap-s * 2) calc($gap-s * 2);
+    padding: 35px 10px 12px;
     text-align: center;
     border-bottom: 1px solid $black;
 
@@ -142,6 +189,8 @@
   }
 
   &__bottom {
+    font-size: 12px;
+    letter-spacing: 1%;
     text-align: center;
     padding: $gap-s;
   }
@@ -157,19 +206,6 @@
 
     &__logo {
       display: none;
-    }
-
-    .social {
-      gap: calc($gap-s / 2);
-    }
-
-    .social a svg path {
-      stroke: $grey;
-      stroke-width: 1px;
-    }
-
-    .social a svg rect {
-      fill: $grey;
     }
 
     .footer__privacy {
@@ -199,6 +235,24 @@
 
     .footer__menu-item:not(.no-hidden) {
       display: none;
+    }
+
+    .footer__bottom {
+      color: $grey-light;
+    }
+
+    .mobile-nav__social {
+      display: flex;
+      order: 2;
+      gap: calc($gap-s / 2);
+    }
+
+    .footer__social {
+      display: none;
+    }
+
+    .footer__bottom {
+      padding: 1rem 0 2rem;
     }
   }
 }

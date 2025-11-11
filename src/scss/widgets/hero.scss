@@ -3,10 +3,12 @@
 
 .hero {
   height: calc(100svh - $header-height - $marquee-height);
+  margin-bottom: 40px;
 
   @include m.respond-to(handhelds) {
-    $header-height: 66px;
-    height: calc(100svh - $header-height);
+    height: 390px;
+    width: 100vw;
+    margin-bottom: 35px;
   }
 
   &__swiper {
@@ -22,18 +24,35 @@
   }
 
   .text-block {
-    text-align: center
+    text-align: center;
+
+    @include m.respond-to(handhelds) {
+      max-width: 350px;
+
+    }
+  }
+
+  .title {
+    margin-bottom: 11px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(calc($gap-s * 2));
+    transition: all $transition-duration ease;
+
+    @include m.respond-to(handhelds) {
+      margin-bottom: 5px;
+    }
   }
 
   .description {
-    font-size: 1.2rem;
-    line-height: 1.6;
-
-    max-width: 27rem;
+    @include m.fontOS(600, 26px);
+    font-size: 24px;
+    max-width: 619px;
     margin: 0 auto;
 
     @include m.respond-to(handhelds) {
       font-size: 15px;
+      line-height: 110%;
     }
   }
 
@@ -53,10 +72,10 @@
   .swiper-pagination {
     position: relative;
     z-index: 3;
-    bottom: calc($gap-s * 4) !important;
+    bottom: 44px !important;
 
     @include m.respond-to(handhelds) {
-      bottom: calc($gap-s * 3) !important;
+      bottom: calc($gap-s * 2) !important;
     }
   }
 
@@ -95,23 +114,14 @@
     color: $white;
     text-align: center;
     max-width: 100%;
-    padding: 0 1rem 6rem;
+    padding: 0 1rem 64px;
 
     @include m.respond-to(handhelds) {
-      padding: 0 1rem 4rem;
+      padding: 0 1rem 40px;
     }
   }
 
-  .title {
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transform: translateY(calc($gap-s * 2));
-    transition: all $transition-duration ease;
-  }
-
   .description {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transform: translateY(calc($gap-s * 2));
     transition: all $transition-duration ease 0.2s;

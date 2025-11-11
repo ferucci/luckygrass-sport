@@ -83,7 +83,7 @@ export function sliders(): void {
         spaceBetween: 15
       },
       1024: {
-        slidesPerView: 3.2,
+        slidesPerView: 3,
         spaceBetween: 20
       }
     },

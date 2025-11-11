@@ -11,7 +11,7 @@
 
   &__inner {
     @include m.df($fd: column);
-    gap: calc($gap-s * 2);
+    gap: 67px;
     background-color: $grey;
     padding: calc($gap-s * 2) calc($gap-s * 3);
 
@@ -22,7 +22,11 @@
 
   &__list {
     @include m.df();
-    gap: 2vw;
+    gap: 80px;
+
+    @include m.respond-to(medium-screens) {
+      gap: 2vw;
+    }
 
     @include m.respond-to(handhelds) {
       flex-wrap: wrap
@@ -38,7 +42,7 @@
 
     position: relative;
 
-    gap: calc($gap-s * 2);
+    gap: .25rem;
     min-width: var(--adv-size);
     min-height: var(--adv-size);
 
@@ -48,7 +52,9 @@
     }
 
     .adv__num {
+      @include m.fontGS(700);
       font-size: calc(var(--adv-fs) * 3);
+      letter-spacing: 1%;
     }
 
     @include m.respond-to(medium-screens) {
@@ -56,9 +62,13 @@
     }
   }
 
+  &__text-wrapper {
+    max-width: 78%;
+  }
+
   &__text {
+    @include m.fontOS(400, 130%);
     text-align: center;
-    text-wrap: balance;
 
     @include m.respond-to(handhelds) {
       text-align: start;
@@ -68,8 +78,11 @@
   &__partners {
     width: 100%;
     @include m.df($jc: space-around);
-    gap: $gap-s;
     flex-wrap: wrap;
+
+    @include m.respond-to(medium-screens) {
+      gap: $gap-s;
+    }
   }
 
 

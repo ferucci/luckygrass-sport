@@ -42,7 +42,7 @@
 
   &__title-wrapper {
     position: absolute;
-    bottom: $gap-s;
+    bottom: 26px;
     left: 50%;
     transform: translateX(-50%);
     transition: transform $transition-duration ease;
