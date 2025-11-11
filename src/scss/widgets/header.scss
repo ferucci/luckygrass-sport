@@ -7,7 +7,7 @@
   &__inner {
     @include m.df($jc: space-between);
 
-    gap: $gap-s 0;
+    gap: 15px;
     color: $white;
     background: transparent;
     padding: 12px 0;
