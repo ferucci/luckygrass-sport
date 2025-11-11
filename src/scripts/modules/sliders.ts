@@ -6,7 +6,7 @@ export function sliders(): void {
 
   // sliders 
   // const _swiper = 
-  new Swiper('.hero__swiper.swiper', {
+  new Swiper('.hero__inner.swiper', {
     modules: [Autoplay, Pagination, EffectFade],
     direction: 'horizontal',
     loop: true,
