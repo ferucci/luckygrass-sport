@@ -15,7 +15,7 @@
   {{> marquee }}
   {{> header }}
 
-  <main class="main">
+  <main class="main blog-page">
     <section class="section hero">
       <div class="hero__inner">
         <div class="hero__wrapepr">
@@ -23,9 +23,9 @@
           <div class="hero__slide slide">
             <img class="slide__image" src="./src/images/blog-bg.png" alt="block page backround">
             <div class="slide__content text-block">
-              <h1 class="title">ПРОИЗВОДСТВО СПОРТИВНОЙ ФОРМЫ</h1>
-              <p class="hero__description description">Спортивная форма с индивидуальным дизайном
-                за 3-5 дней для взрослых и детей</p>
+              <h1 class="title">БЛОГ КОМПАНИИ LUCKYGRASS</h1>
+              <p class="hero__description description">Полезные материалы для тренеров, организаторов и всех,
+                кто заказывает форму на команду</p>
             </div>
           </div>
 
@@ -33,23 +33,48 @@
       </div>
     </section>
 
-    <section class="section story reviews">
+    <div class="breadcrumbs">
       <div class="container">
-        <div class="story__inner swiper" id="reviews">
+        <div class="breadcrumbs__inner">
+          <!-- Левая часть - хлебные крошки -->
+          <section class="breadcrumbs__section">
+            <nav class="breadcrumbs__nav">
+              <span class="breadcrumbs__item">Главная</span>
+              <span class="breadcrumbs__separator">› </span>
+              <span class="breadcrumbs__item active">Блог</span>
+            </nav>
+          </section>
+
+          <!-- Правая часть - фильтр -->
+          <section class="filter__section">
+            <label class="filter__label">Статьи по темам:</label>
+
+            <select class="filter__select">
+              <option value="">Все статьи</option>
+              <option value="science">Наука</option>
+              <option value="health">Здоровье</option>
+              <option value="business">Бизнес</option>
+            </select>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="section story articles">
+      <div class="container">
+        <div class="story__inner">
           <div class="story__top">
-            <h3 class="title">Отзывы о нас</h3>
-            <div class="swiper-pagination"></div>
-            <div class="story__navigation">
-              <button class="story__prev" id="reviews-prev"></button>
-              <button class="story__next" id="reviews-next"></button>
-            </div>
+            <h3 class="title">СПИСОК СТАТЕЙ</h3>
           </div>
 
-          <ul class="story__list swiper-wrapper" role="list">
-            <li class="story__item swiper-slide">
+          <ul class="story__list" role="list">
+            <li class="story__item">
               <div class="story__image-wrapper">
                 <img src="./src/images/main/reviews/Rectangle 23.jpg" alt="review image" class="story__img">
               </div>
+              <a href="#" class="story__link cs">
+                Популярное
+              </a>
               <h5 class="story__title title">
                 Волейбольная команда «Адамант»
               </h5>
@@ -58,13 +83,16 @@
                 потенциал инструмента ...
               </p>
               <a href="#" class="story__link">
-                Читать отзыв
+                Читать
               </a>
             </li>
-            <li class="story__item swiper-slide">
+            <li class="story__item">
               <div class="story__image-wrapper">
                 <img src="./src/images/main/preview-catalog-cmerch.png" alt="review image" class="story__img">
               </div>
+              <a href="#" class="story__link cs">
+                Кейсы
+              </a>
               <h5 class="story__title title">
                 Волейбольная команда «Адамант»
               </h5>
@@ -73,13 +101,16 @@
                 потенциал инструмента ...
               </p>
               <a href="#" class="story__link">
-                Читать отзыв
+                Читать
               </a>
             </li>
-            <li class="story__item swiper-slide">
+            <li class="story__item">
               <div class="story__image-wrapper">
                 <img src="./src/images/main/reviews/Rectangle 26.jpg" alt="review image" class="story__img">
               </div>
+              <a href="#" class="story__link cs">
+                Кейсы
+              </a>
               <h5 class="story__title title">
                 Волейбольная команда «Адамант»
               </h5>
@@ -88,13 +119,16 @@
                 потенциал инструмента ...
               </p>
               <a href="#" class="story__link">
-                Читать отзыв
+                Читать
               </a>
             </li>
-            <li class="story__item swiper-slide">
+            <li class="story__item">
               <div class="story__image-wrapper">
                 <img src="./src/images/main/reviews/Rectangle 27.jpg" alt="review image" class="story__img">
               </div>
+              <a href="#" class="story__link cs">
+                Кейсы
+              </a>
               <h5 class="story__title title">
                 Волейбольная команда «Адамант»
               </h5>
@@ -103,13 +137,16 @@
                 потенциал инструмента ...
               </p>
               <a href="#" class="story__link">
-                Читать отзыв
+                Читать
               </a>
             </li>
-            <li class="story__item swiper-slide">
+            <li class="story__item">
               <div class="story__image-wrapper">
                 <img src="./src/images/main/reviews/Rectangle 23.jpg" alt="review image" class="story__img">
               </div>
+              <a href="#" class="story__link cs">
+                Кейсы
+              </a>
               <h5 class="story__title title">
                 Волейбольная команда «Адамант»
               </h5>
@@ -118,13 +155,16 @@
                 потенциал инструмента ...
               </p>
               <a href="#" class="story__link">
-                Читать отзыв
+                Читать
               </a>
             </li>
-            <li class="story__item swiper-slide">
+            <li class="story__item">
               <div class="story__image-wrapper">
                 <img src="./src/images/main/reviews/Rectangle 26.jpg" alt="review image" class="story__img">
               </div>
+              <a href="#" class="story__link cs">
+                Популярное
+              </a>
               <h5 class="story__title title">
                 Волейбольная команда «Адамант»
               </h5>
@@ -133,19 +173,22 @@
                 потенциал инструмента ...
               </p>
               <a href="#" class="story__link">
-                Читать отзыв
+                Читать
               </a>
             </li>
           </ul>
         </div>
       </div>
+      <button class="cta__button button">
+        Загрузить еще статьи
+      </button>
     </section>
 
     <section class="section story blog">
       <div class="container">
         <div class="story__inner swiper" id="blog">
           <div class="story__top">
-            <h3 class="title">БЛОГ КОМПАНИИ LUCKYGRASS</h3>
+            <h3 class="title">ЧИТАЙТЕ ТАКЖЕ</h3>
             <div class="swiper-pagination"></div>
             <div class="story__navigation">
               <button class="story__prev" id="blog-prev"></button>
@@ -267,6 +310,7 @@
       </div>
     </section>
 
+    <!-- ХОТИТЕ ПОЛУЧАТЬ СТАТЬИ ПО ТЕМЕ ФОРМЫ И КОМАНДЫ ПЕРВЫМИ?ПОДПИШИТЕСЬ НА НАШ ТЕЛЕГРАМ-КАНАЛ. -->
     {{> call-to-action}}
     {{> contacts}}
 

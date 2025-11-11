@@ -17,6 +17,9 @@
 @use 'widgets/story';
 @use 'widgets/contacts';
 
+// pages
+@use 'pages/blog';
+
 .nav {
   &__list {
     @include m.df();

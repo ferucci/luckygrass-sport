@@ -62,7 +62,8 @@
 
   &__link {
     @include m.fontOS(400);
-    font-size: 12px;
+    display: inline-block;
+    font-size: $fs-small;
     color: $link-color;
     text-decoration: underline;
   }
@@ -73,14 +74,6 @@
   }
 
 }
-
-.blog {
-  .story__link {
-    display: inline-block;
-    font-size: $fs-small;
-  }
-}
-
 
 .story__navigation {
   display: flex;
