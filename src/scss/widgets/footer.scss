@@ -116,7 +116,7 @@
 
   ul.footer__list,
   &__nav {
-    gap: 5vw;
+    gap: 70px;
     @include m.df(initial, space-between);
 
     @include m.respond-to(handhelds) {
@@ -141,7 +141,7 @@
   }
 
   &__menu:first-child {
-    padding-left: 3.8vw;
+    padding-left: 50px;
 
     @include m.respond-to(tablet) {
       padding-left: 0;

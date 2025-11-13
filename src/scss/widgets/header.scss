@@ -5,10 +5,10 @@
   position: relative;
 
   &.dark {
-    border-bottom: 1px solid #CCCCCCCC;
 
     .header__inner {
       color: $black;
+      border-bottom: 1px solid #CCCCCCCC;
 
       @include m.respond-to(medium-screens) {
         color: $white;
@@ -290,6 +290,10 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    &.active {
+      text-decoration: underline;
     }
   }
 
