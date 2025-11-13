@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="/src/scss/main.scss">
 </head>
 
+
+
 <body>
 
   {{> sprites }}
@@ -17,6 +19,10 @@
 
   <main class="main">
 
+    {{> breadcrumbs-filter
+    breadcrumbs=breadcrumbs
+    filterOptions=filterOptions
+    }}
   </main>
 
   {{> footer }}

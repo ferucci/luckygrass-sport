@@ -1,0 +1,32 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="breadcrumbs__inner">
+      <!-- Левая часть - хлебные крошки -->
+      <section class="breadcrumbs__section">
+        <nav class="breadcrumbs__nav">
+          {{#each breadcrumbs}}
+          {{#unless @first}}<span class="breadcrumbs__separator">› </span>{{/unless}}
+          <span class="breadcrumbs__item{{#if active}} active{{/if}}">
+            {{#if url}}
+            <a href="{{url}}">{{name}}</a>
+            {{else}}
+            {{name}}
+            {{/if}}
+          </span>
+          {{/each}}
+        </nav>
+      </section>
+
+      <!-- Правая часть - фильтр -->
+      <section class="filter__section">
+        <label class="filter__label">Статьи по темам:</label>
+
+        <select class="filter__select">
+          {{#each filterOptions}}
+          <option value="{{value}}">{{text}}</option>
+          {{/each}}
+        </select>
+      </section>
+    </div>
+  </div>
+</div>

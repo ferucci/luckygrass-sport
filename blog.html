@@ -33,32 +33,7 @@
       </div>
     </section>
 
-    <div class="breadcrumbs">
-      <div class="container">
-        <div class="breadcrumbs__inner">
-          <!-- Левая часть - хлебные крошки -->
-          <section class="breadcrumbs__section">
-            <nav class="breadcrumbs__nav">
-              <span class="breadcrumbs__item">Главная</span>
-              <span class="breadcrumbs__separator">› </span>
-              <span class="breadcrumbs__item active">Блог</span>
-            </nav>
-          </section>
-
-          <!-- Правая часть - фильтр -->
-          <section class="filter__section">
-            <label class="filter__label">Статьи по темам:</label>
-
-            <select class="filter__select">
-              <option value="">Все статьи</option>
-              <option value="science">Наука</option>
-              <option value="health">Здоровье</option>
-              <option value="business">Бизнес</option>
-            </select>
-          </section>
-        </div>
-      </div>
-    </div>
+    {{> breadcrumbs-filter}}
 
     <section class="section story articles">
       <div class="container">
