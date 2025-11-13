@@ -10,7 +10,7 @@ export function sliders(): void {
     modules: [Autoplay, Pagination, EffectFade],
     direction: 'horizontal',
     loop: true,
-    speed: 700,
+    speed: 600,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
@@ -19,7 +19,7 @@ export function sliders(): void {
       el: '.swiper-pagination',
       clickable: true,
     },
-    effect: 'fade',
+    effect: 'flip',
     fadeEffect: {
       crossFade: true
     },
