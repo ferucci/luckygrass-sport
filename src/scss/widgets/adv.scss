@@ -11,7 +11,7 @@
 
   &__inner {
     @include m.df($fd: column);
-    gap: 67px;
+    gap: 64px;
     background-color: $grey;
     padding: calc($gap-s * 2) calc($gap-s * 3);
 

@@ -2,7 +2,11 @@
 @use '../base/mixins' as m;
 
 .hero {
-  height: calc(100svh - $header-height - $marquee-height);
+  $height-hero-section: 680px;
+  $height-hero-section-md: 620px;
+  $height-hero-section-sm: 390px;
+
+  height: calc($height-hero-section - $header-height - $marquee-height);
   margin-bottom: 40px;
 
   .swiper {
@@ -27,21 +31,30 @@
     display: flex;
   }
 
+  @include m.respond-to(medium-screens) {
+    height: $height-hero-section-md;
+  }
+
   @include m.respond-to(handhelds) {
-    height: 390px;
+    height: $height-hero-section-sm;
     width: 100vw;
     margin-bottom: 35px;
   }
 
   &__inner {
     width: 100%;
-    height: 100%;
+    height: $height-hero-section;
     position: absolute;
     top: 0;
     left: 0;
 
     @include m.respond-to(medium-screens) {
       position: static;
+      height: $height-hero-section-md;
+    }
+
+    @include m.respond-to(handhelds) {
+      height: $height-hero-section-sm;
     }
 
   }
@@ -51,7 +64,6 @@
 
     @include m.respond-to(handhelds) {
       max-width: 350px;
-
     }
   }
 

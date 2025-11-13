@@ -26,9 +26,9 @@
     &::after {
       content: '';
       position: absolute;
-      width: 3.3rem;
-      height: 3.3rem;
-      top: - calc(3.3rem / 2);
+      width: 3rem;
+      height: 3rem;
+      top: - calc(3rem / 2);
       left: 50%;
       transform: translateX(-50%);
       background-image: url(../images/main/footer-attr.png);
@@ -163,14 +163,14 @@
   // }
 
   &__middle {
-    padding: 35px 10px 12px;
+    padding: 35px 10px 17px;
     text-align: center;
     border-bottom: 1px solid $black;
 
     h4 {
       font-weight: 400;
       letter-spacing: 1%;
-      margin-bottom: calc($gap-s / 2);
+      margin-bottom: 0.1rem;
     }
 
     @include m.respond-to(handhelds) {
