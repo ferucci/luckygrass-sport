@@ -4,6 +4,18 @@
 .header {
   position: relative;
 
+  &.dark {
+    border-bottom: 1px solid #CCCCCCCC;
+
+    .header__inner {
+      color: $black;
+
+      @include m.respond-to(medium-screens) {
+        color: $white;
+      }
+    }
+  }
+
   &__inner {
     @include m.df($jc: space-between);
 
