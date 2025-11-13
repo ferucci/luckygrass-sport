@@ -18,14 +18,9 @@ export const breadcrumbs = {
 
   // Для страницы статьи
   article: [
-    { name: "Главная", url: "./", active: false },
+    { name: "Главная", url: "/", active: false },
     { name: "Блог", url: "/blog", active: false },
     { name: "Экипировка АО «Мосметрострой» на СтройСпортФесте 2025", url: "", active: true }
   ] as BreadcrumbItem[],
 
-  // Для других страниц
-  about: [
-    { name: "Главная", url: "/", active: false },
-    { name: "О нас", url: "", active: true }
-  ] as BreadcrumbItem[]
 };
