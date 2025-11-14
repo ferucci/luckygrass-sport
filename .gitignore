@@ -12,6 +12,9 @@ dist
 dist-ssr
 package-lock.json
 
+# layout mockups
+pp
+
 *.local.txt
 *.local.md
 
