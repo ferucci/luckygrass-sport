@@ -4,6 +4,8 @@
 @use 'base/global';
 @use 'base/mixins' as m;
 // @use 'animate';
+
+@use 'widgets/breadcrumbs';
 @use 'widgets/hero';
 
 @use 'widgets/marquee';
