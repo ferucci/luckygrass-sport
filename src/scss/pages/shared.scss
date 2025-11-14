@@ -1,0 +1,95 @@
+@use '../base/vars' as *;
+@use '../base/mixins' as m;
+
+.breadcrumbs {
+  font-size: 13px;
+
+  &__inner {
+    display: flex;
+    margin-bottom: 60px;
+
+    @include m.respond-to(handhelds) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__section {
+    flex: 1;
+  }
+
+  &__nav {
+    color: $black;
+  }
+
+  &__item {
+    @include m.fontOS();
+    display: inline-block;
+  }
+
+  &__item.active {
+    color: #808080;
+    /* серый цвет для активной крошки */
+  }
+
+  &__separator {
+    display: inline-block;
+    margin: 0 5px;
+  }
+}
+
+
+.filter {
+
+  &__section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      pointer-events: none;
+      width: 14px;
+      height: 9px;
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='9' viewBox='0 0 14 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.73291 0.680664L6.79958 7.214L12.8662 0.680664' stroke='black' stroke-width='2' stroke-miterlimit='10'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    @include m.respond-to(handhelds) {
+      display: none;
+    }
+
+  }
+
+  &__label,
+  &__select,
+  option {
+    font-size: 13px;
+    @include m.fontOS();
+    display: inline-block;
+  }
+
+
+  &__select {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding-right: 20px;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+}
