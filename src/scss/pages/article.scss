@@ -5,6 +5,17 @@
 
   .article {
 
+    &__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      margin-bottom: 98px;
+
+      @include m.respond-to(handhelds) {
+        margin-bottom: 50px;
+      }
+    }
+
+    // header 
     &__header {
       text-align: center;
       margin-bottom: 60px;
@@ -64,6 +75,111 @@
         width: 5px;
         height: 5px;
       }
+    }
+
+    // header end
+
+    // content
+    &__content {
+      margin-bottom: 55px;
+
+      @include m.respond-to(handhelds) {
+        margin-bottom: 40px;
+      }
+    }
+
+    &__image {
+      max-height: 600px;
+      margin-bottom: 20px;
+
+      @include m.respond-to(handhelds) {
+        margin-bottom: 15px;
+      }
+    }
+
+    &__text,
+    &__list {
+      font-size: 16px;
+
+      @include m.respond-to(handhelds) {
+        font-size: 15px;
+      }
+    }
+
+    &__text:not(.bold),
+    &__list {
+      @include m.fontOS(400);
+      margin-bottom: 20px;
+
+      @include m.respond-to(handhelds) {
+        margin-bottom: 15px;
+      }
+    }
+
+    &__list {
+      list-style: none;
+
+      li {
+        position: relative;
+        padding-left: 25px
+      }
+
+      & li::after {
+        content: '•';
+        position: absolute;
+        top: 1px;
+        left: 10px;
+        width: 5px;
+        height: 5px;
+      }
+
+    }
+
+    &__text.bold {
+      @include m.fontOS(600);
+      display: inline-block;
+      margin-bottom: 15px;
+
+      @include m.respond-to(handhelds) {
+        margin-bottom: 10px;
+      }
+    }
+
+    // 
+
+    &__footer {
+      @include m.df();
+      gap: 25px;
+      flex-wrap: wrap;
+      text-align: center;
+
+      .article__text {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 0;
+
+        @include m.respond-to(handhelds) {
+          font-size: 15px;
+          font-weight: 600;
+        }
+      }
+
+      .social {
+        gap: 11px;
+
+        @include m.respond-to(handhelds) {
+          gap: 15px;
+        }
+      }
+    }
+
+  }
+
+  .story {
+    margin-top: 70px;
+
+    @include m.respond-to(handhelds) {
+      margin-top: 45px;
     }
   }
 }
