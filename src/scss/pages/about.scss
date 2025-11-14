@@ -1,0 +1,66 @@
+@use '../base/vars' as *;
+@use '../base/mixins' as m;
+
+.about-page {
+
+  .section {
+    margin-bottom: 60px;
+
+    @include m.respond-to(handhelds) {
+      margin-bottom: 35px;
+    }
+  }
+
+  .hero__inner {
+    position: relative;
+    height: auto;
+
+
+    .title {
+      font-size: 45px;
+      margin-bottom: 54px;
+
+      @include m.respond-to(handhelds) {
+        font-size: 30px;
+        margin-bottom: 36px;
+      }
+    }
+  }
+
+  &__video {
+    margin-bottom: 75px;
+    max-width: 900px;
+    width: 100%;
+    cursor: pointer;
+
+    @include m.respond-to(handhelds) {
+      margin-bottom: 12px;
+    }
+  }
+
+  .slide {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description {
+    font-size: 17px;
+    font-weight: 400;
+
+    @include m.respond-to(handhelds) {
+      display: none;
+    }
+  }
+
+  .link {
+    display: none;
+    @include m.fontOS(400);
+    font-size: 15px;
+    color: $link-color;
+    text-decoration: underline;
+
+    @include m.respond-to(handhelds) {
+      display: block;
+    }
+  }
+}

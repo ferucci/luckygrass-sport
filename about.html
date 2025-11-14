@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main page</title>
+  <link rel="shortcut icon" href="luckygrass-favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/src/scss/main.scss">
+</head>
+
+<body>
+  {{> sprites }}
+  {{> marquee }}
+  {{> header-black }}
+
+  {{> breadcrumbs-filter}}
+
+  <main class="main about-page">
+    <section class="section">
+      <div class="hero__inner">
+        <div class="container">
+          <div class="hero__wrapepr">
+
+            <div class="hero__slide slide">
+              <h1 class="title">О компании</h1>
+              <img class="about-page__video" src="./src/images/about-video-preview.png" alt="">
+              <!-- <video src=""></video> -->
+              <p class="description">Текст о компании</p>
+              <a href="#" class="link">
+                Открыть в Яндекс видео
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story reviews">
+      <div class="container">
+        <div class="story__inner swiper" id="reviews">
+          <div class="story__top">
+            <h3 class="title">Отзывы о нас</h3>
+            <div class="swiper-pagination"></div>
+            <div class="story__navigation">
+              <button class="story__prev" id="reviews-prev"></button>
+              <button class="story__next" id="reviews-next"></button>
+            </div>
+          </div>
+
+          <ul class="story__list swiper-wrapper" role="list">
+            <li class="story__item swiper-slide">
+              <div class="story__image-wrapper">
+                <img src="./src/images/main/reviews/Rectangle 23.jpg" alt="review image" class="story__img">
+              </div>
+              <h5 class="story__title title">
+                Волейбольная команда «Адамант»
+              </h5>
+              <p class="story__text">
+                Положительный отзыв – правильное вложение для привлечения новых клиентов.Поэтому будем использовать
+                потенциал инструмента ...
+              </p>
+              <a href="#" class="story__link">
+                Читать отзыв
+              </a>
+            </li>
+            <li class="story__item swiper-slide">
+              <div class="story__image-wrapper">
+                <img src="./src/images/main/preview-catalog-cmerch.png" alt="review image" class="story__img">
+              </div>
+              <h5 class="story__title title">
+                Волейбольная команда «Адамант»
+              </h5>
+              <p class="story__text">
+                Положительный отзыв – правильное вложение для привлечения новых клиентов.Поэтому будем использовать
+                потенциал инструмента ...
+              </p>
+              <a href="#" class="story__link">
+                Читать отзыв
+              </a>
+            </li>
+            <li class="story__item swiper-slide">
+              <div class="story__image-wrapper">
+                <img src="./src/images/main/reviews/Rectangle 26.jpg" alt="review image" class="story__img">
+              </div>
+              <h5 class="story__title title">
+                Волейбольная команда «Адамант»
+              </h5>
+              <p class="story__text">
+                Положительный отзыв – правильное вложение для привлечения новых клиентов.Поэтому будем использовать
+                потенциал инструмента ...
+              </p>
+              <a href="#" class="story__link">
+                Читать отзыв
+              </a>
+            </li>
+            <li class="story__item swiper-slide">
+              <div class="story__image-wrapper">
+                <img src="./src/images/main/reviews/Rectangle 27.jpg" alt="review image" class="story__img">
+              </div>
+              <h5 class="story__title title">
+                Волейбольная команда «Адамант»
+              </h5>
+              <p class="story__text">
+                Положительный отзыв – правильное вложение для привлечения новых клиентов.Поэтому будем использовать
+                потенциал инструмента ...
+              </p>
+              <a href="#" class="story__link">
+                Читать отзыв
+              </a>
+            </li>
+            <li class="story__item swiper-slide">
+              <div class="story__image-wrapper">
+                <img src="./src/images/main/reviews/Rectangle 23.jpg" alt="review image" class="story__img">
+              </div>
+              <h5 class="story__title title">
+                Волейбольная команда «Адамант»
+              </h5>
+              <p class="story__text">
+                Положительный отзыв – правильное вложение для привлечения новых клиентов.Поэтому будем использовать
+                потенциал инструмента ...
+              </p>
+              <a href="#" class="story__link">
+                Читать отзыв
+              </a>
+            </li>
+            <li class="story__item swiper-slide">
+              <div class="story__image-wrapper">
+                <img src="./src/images/main/reviews/Rectangle 26.jpg" alt="review image" class="story__img">
+              </div>
+              <h5 class="story__title title">
+                Волейбольная команда «Адамант»
+              </h5>
+              <p class="story__text">
+                Положительный отзыв – правильное вложение для привлечения новых клиентов.Поэтому будем использовать
+                потенциал инструмента ...
+              </p>
+              <a href="#" class="story__link">
+                Читать отзыв
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story blog">
+      <div class="container">
+        <div class="story__inner swiper" id="blog">
+          <div class="story__top">
+            <h3 class="title">БЛОГ КОМПАНИИ LUCKYGRASS</h3>
+            <div class="swiper-pagination"></div>
+            <div class="story__navigation">
+              <button class="story__prev" id="blog-prev"></button>
+              <button class="story__next" id="blog-next"></button>
+            </div>
+          </div>
+
+          <ul class="story__list swiper-wrapper" role="list">
+            <li class="story__item swiper-slide">
+              <div class="story__image-wrapper">
+                <img src="./src/images/main/blog/Rectangle 27.png" alt="review image" class="story__img">
+              </div>
+              <a href="#" class="story__link cs">
+                Кейсы
+              </a>
+              <h5 class="story__title title">
+                Почему мерч и спортивная форма на заказ — это не просто тренд, а необходимость компании.
+              </h5>
+              <p class="story__text">
+                Вот уже 13-й раз состоялся забег Elbrus World Race — серия высокогорных ультрамарафонов с различными
+                дистанциями, проходящих вокруг горы Эльбрус ...
+              </p>
+              <a href="#" class="story__link">
+                Читать
+              </a>
+            </li>
+            <li class="story__item swiper-slide">
+              <div class="story__image-wrapper">
+                <img src="./src/images/main/blog/Rectangle 29.png" alt="review image" class="story__img">
+              </div>
+              <a href="#" class="story__link cs">
+                Кейсы
+              </a>
+              <h5 class="story__title title">
+                Почему мерч и спортивная форма на заказ — это не просто тренд, а необходимость компании.
+              </h5>
+              <p class="story__text">
+                Вот уже 13-й раз состоялся забег Elbrus World Race — серия высокогорных ультрамарафонов с различными
+                дистанциями, проходящих вокруг горы Эльбрус ...
+              </p>
+              <a href="#" class="story__link">
+                Читать
+              </a>
+            </li>
+            <li class="story__item swiper-slide">
+              <div class="story__image-wrapper">
+                <img src="./src/images/main/blog/Rectangle 27.png" alt="review image" class="story__img">
+              </div>
+              <a href="#" class="story__link cs">
+                Кейсы
+              </a>
+              <h5 class="story__title title">
+                Почему мерч и спортивная форма на заказ — это не просто тренд, а необходимость компании.
+              </h5>
+              <p class="story__text">
+                Вот уже 13-й раз состоялся забег Elbrus World Race — серия высокогорных ультрамарафонов с различными
+                дистанциями, проходящих вокруг горы Эльбрус ...
+              </p>
+              <a href="#" class="story__link">
+                Читать
+              </a>
+            </li>
+            <li class="story__item swiper-slide">
+              <div class="story__image-wrapper">
+                <img src="./src/images/main/blog/Rectangle 29.png" alt="review image" class="story__img">
+              </div>
+              <a href="#" class="story__link cs">
+                Кейсы
+              </a>
+              <h5 class="story__title title">
+                Почему мерч и спортивная форма на заказ — это не просто тренд, а необходимость компании.
+              </h5>
+              <p class="story__text">
+                Вот уже 13-й раз состоялся забег Elbrus World Race — серия высокогорных ультрамарафонов с различными
+                дистанциями, проходящих вокруг горы Эльбрус ...
+              </p>
+              <a href="#" class="story__link">
+                Читать
+              </a>
+            </li>
+            <li class="story__item swiper-slide">
+              <div class="story__image-wrapper">
+                <img src="./src/images/main/blog/Rectangle 28.png" alt="review image" class="story__img">
+              </div>
+              <a href="#" class="story__link cs">
+                Кейсы
+              </a>
+              <h5 class="story__title title">
+                Почему мерч и спортивная форма на заказ — это не просто тренд, а необходимость компании.
+              </h5>
+              <p class="story__text">
+                Вот уже 13-й раз состоялся забег Elbrus World Race — серия высокогорных ультрамарафонов с различными
+                дистанциями, проходящих вокруг горы Эльбрус ...
+              </p>
+              <a href="#" class="story__link">
+                Читать
+              </a>
+            </li>
+            <li class="story__item swiper-slide">
+              <div class="story__image-wrapper">
+                <img src="./src/images/main/blog/Rectangle 27.png" alt="review image" class="story__img">
+              </div>
+              <a href="#" class="story__link cs">
+                Кейсы
+              </a>
+              <h5 class="story__title title">
+                Почему мерч и спортивная форма на заказ — это не просто тренд, а необходимость компании.
+              </h5>
+              <p class="story__text">
+                Вот уже 13-й раз состоялся забег Elbrus World Race — серия высокогорных ультрамарафонов с различными
+                дистанциями, проходящих вокруг горы Эльбрус ...
+              </p>
+              <a href="#" class="story__link">
+                Читать
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    {{> call-to-action}}
+    {{> contacts}}
+
+  </main>
+
+  {{> footer }}
+
+  <div class="overlay"></div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
